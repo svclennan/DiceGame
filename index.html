@@ -5,14 +5,33 @@
 	<title>Dice Battle Royale</title>
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap.css">
-	<script src = "dice.js"></script>
+	<link rel="stylesheet" href="site.css">
 
 </head>
 <body>
-	<script src = "dice.js"></script>
-	<div style = "margin: 5%;">
-		<button onClick="runGame()">Start the Game</button>
-	</div>
-</body>
+	<div style="height:auto; margin-right: 80px; margin-left:80px;">
+		<table id = "winner" class = "table text-center" style = "width: 100%; height: auto;">
 
+		</table>
+		<table id="table" class = "border table-hover text-center" style = "width: 100%; height: auto;">
+
+		</table>
+	</div>
+	
+	<script></script>
+	<div class = row style = "margin: 1%;">
+		<div class = "col-sm-4 text-center">
+			<button onClick="runGame()" class= "btn btn-primary btn-large" id = "progressButton">Start the Game</button>
+		</div>
+		<div class = "col-sm-8">
+			<table id = "prevWinner" class = "border-table table-hover text-center" style = "width: 100%; height: auto;">
+
+			</table>
+		</div>
+	</div>
+	
+	<div id = "snackbar">
+	</div>
+	<script src = "dice.js"></script>
+</body>
 </html>
