@@ -100,7 +100,7 @@ function finalDice(){
 	}
 }
 var roundNumber = 1;
-
+var highestScore = 0;
 function runRound(){
 	for(let i = 0; i < playersAlive.length; i++){
 		playersAlive[i].roundScore = rollAll();
@@ -110,6 +110,9 @@ function runRound(){
 	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	lastPlayer = playersAlive.pop();
 	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	if(playersAlive[0].roundScore > highestScore){
+		highestScore = playersAlive[0].roundScore;
+	}
 }
 function runFinalRounds(){
 	for(let i = 0; i < playersAlive.length; i++){
@@ -118,6 +121,9 @@ function runFinalRounds(){
 	playersAlive.sort(function(a,b){return b.roundScore - a.roundScore});
 	let lastPlayer = playersAlive.pop();
 	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	if(playersAlive[0].roundScore > highestScore){
+		highestScore = playersAlive[0].roundScore;
+	}
 }
 function finalRound(){
 	for(let i=0;i<playersAlive.length;i++){
@@ -167,6 +173,9 @@ function runGame(){
 		playerNine,
 		playerTen
 		]
+		for(var i = 0; i < playersAlive.length; i++){
+			playersAlive[i].roundScore = 0;
+		}
 		roundNumber = 1;
 		document.getElementById("progressButton").innerHTML = "Play again?";
 		makeTable();
