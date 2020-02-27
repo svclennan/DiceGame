@@ -130,7 +130,12 @@ function finalRound(){
 		playersAlive[i].roundScore = finalDice();
 	}
 	playersAlive.sort(function(a,b){return b.roundScore - a.roundScore});
-	let lastPlayer = playersAlive.pop();
+	if(playersAlive[0].roundScore == playersAlive[1].roundScore){
+		console.log("Tie");
+		finalRound();
+	}
+	else{
+		let lastPlayer = playersAlive.pop();
 	console.log(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	lastPlayer = playersAlive.pop();
 	console.log(lastPlayer.name + " wins the game with a score of " + lastPlayer.roundScore + "!!!");
@@ -142,6 +147,7 @@ function finalRound(){
 	lastPlayer.wins += 1;
 	if(!(gameWinners.includes(lastPlayer))){
 		gameWinners.push(lastPlayer);
+	}
 	}
 }
 
