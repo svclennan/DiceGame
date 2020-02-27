@@ -107,9 +107,9 @@ function runRound(){
 	}
 	playersAlive.sort(function(a,b){return b.roundScore - a.roundScore});
 	let lastPlayer = playersAlive.pop();
-	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	console.log(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	lastPlayer = playersAlive.pop();
-	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	console.log(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	if(playersAlive[0].roundScore > highestScore){
 		highestScore = playersAlive[0].roundScore;
 	}
@@ -120,7 +120,7 @@ function runFinalRounds(){
 	}
 	playersAlive.sort(function(a,b){return b.roundScore - a.roundScore});
 	let lastPlayer = playersAlive.pop();
-	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	console.log(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	if(playersAlive[0].roundScore > highestScore){
 		highestScore = playersAlive[0].roundScore;
 	}
@@ -131,9 +131,9 @@ function finalRound(){
 	}
 	playersAlive.sort(function(a,b){return b.roundScore - a.roundScore});
 	let lastPlayer = playersAlive.pop();
-	alert(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
+	console.log(lastPlayer.name + " has lost with a score of " + lastPlayer.roundScore + ".");
 	lastPlayer = playersAlive.pop();
-	alert(lastPlayer.name + " wins the game with a score of " + lastPlayer.roundScore + "!!!");
+	console.log(lastPlayer.name + " wins the game with a score of " + lastPlayer.roundScore + "!!!");
 	document.getElementById("winner").innerHTML = "<tr class = table-info><td class = text-center>" + lastPlayer.name + " won!!!</tr></td>";
 	var x = document.getElementById("snackbar")
 	x.innerHTML = lastPlayer.name + " wins!!!";
@@ -159,7 +159,7 @@ function runGame(){
 		makeTable();
 	}
 	else{
-		alert("Dice Shootout!!");
+		console.log("Dice shootout")
 		finalRound();
 		playersAlive = [
 		playerOne,
